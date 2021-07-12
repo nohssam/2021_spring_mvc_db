@@ -88,6 +88,16 @@ public class MyController {
 			return new ModelAndView("error") ;
 		}
 	}
+	@RequestMapping("update_ok.do")
+	public ModelAndView updateokCommand(VO vo) {
+		try {
+			myService.getUpdate(vo);
+			return new ModelAndView("redirect:onelist.do?idx="+vo.getIdx());
+		} catch (Exception e) {
+			System.out.println(e);
+			return new ModelAndView("error") ;
+		}
+	}
 }
 
 
