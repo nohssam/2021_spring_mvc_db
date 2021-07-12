@@ -19,8 +19,8 @@
 	<div>
 		<h2>방명록 : 작성화면</h2>
 		<hr>
-		<p>[ <a href="list.jsp">목록으로</a> ]</p>
-		<form method="post" action="write_ok.jsp">
+		<p>[ <a href="list.do">목록으로</a> ]</p>
+		<form method="post" action="write_ok.do">
 			<table>
 				<tbody>
 					<tr><th class="bg">작성자</th> <td><input type="text" name="name" ></td></tr>

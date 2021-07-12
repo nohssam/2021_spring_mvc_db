@@ -1,22 +1,7 @@
-<%@page import="com.ict.db.VO"%>
-<%@page import="com.ict.db.DAO"%>
 <%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
 <%@page import="org.springframework.web.context.WebApplicationContext"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% 
-   request.setCharacterEncoding("utf-8");
-   String idx = request.getParameter("idx");
-  
-   // JSP에서는 session에 담아 있어서 그냥 사용했는데 보안으로 idx를 가지고 DB 갔다가 오자 
-       WebApplicationContext context =
-    		WebApplicationContextUtils.getWebApplicationContext(application);
-    DAO dao = (DAO)context.getBean("dao");
-    
-    VO vo = dao.getSelectOne(idx);
-    pageContext.setAttribute("vo",vo);
-   
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,8 +35,8 @@
 	<div>
 		<h2>방명록 : 수정화면</h2>
 		<hr>
-		<p>[ <a href="list.jsp">목록으로</a> ]</p>
-		<form method="post" action="update_ok.jsp">
+		<p>[ <a href="list.do">목록으로</a> ]</p>
+		<form method="post" action="update_ok.do">
 			<table>
 				<tbody>
 					<tr><th class="bg">작성자</th> <td><input type="text" name="name" value="${vo.name }"></td></tr>

@@ -19,18 +19,15 @@ public class MyServiceImpl implements MyService{
 	}
 	@Override
 	public int getInsert(VO vo) throws Exception {
-		
-		return 0;
+		return myDAO.getInsert(vo);
 	}
 	@Override
 	public VO getOneList(String idx) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return myDAO.getOneList(idx);
 	}
 	@Override
 	public int getDelete(String idx) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return myDAO.getDelete(idx);
 	}
 	@Override
 	public int getUpdate(VO vo) throws Exception {

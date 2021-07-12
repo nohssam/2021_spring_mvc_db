@@ -14,22 +14,19 @@ public class MyDAOImpl implements MyDAO{
 	private SqlSessionTemplate sqlSessionTemplate;
 	@Override
 	public List<VO> getList() throws Exception {
-		return sqlSessionTemplate.selectList("list");
+		return sqlSessionTemplate.selectList("guestbook.list");
 	}
 	@Override
 	public int getInsert(VO vo) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSessionTemplate.insert("guestbook.insert", vo);
 	}
 	@Override
 	public VO getOneList(String idx) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSessionTemplate.selectOne("guestbook.onelist", idx);
 	}
 	@Override
 	public int getDelete(String idx) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSessionTemplate.delete("guestbook.delete", idx);
 	}
 	@Override
 	public int getUpdate(VO vo) throws Exception {

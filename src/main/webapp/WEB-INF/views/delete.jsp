@@ -18,7 +18,7 @@
 <script type="text/javascript">
 	function del_ok(f) {
 		// 비밀번호체크
-		if(f.pwd.value == "${param.pwd}"){
+		if(f.pwd.value == "${vo.pwd}"){
 			var chk = confirm("정말 삭제할까요?");
 			if(chk){
 				f.submit();
@@ -38,8 +38,8 @@
 	<div>
 		<h2>방명록 : 삭제화면</h2>
 		<hr>
-		<p>[ <a href="$list.jsp">목록으로</a> ]</p>
-		<form method="post" action="delete_ok.jsp">
+		<p>[ <a href="list.do">목록으로</a> ]</p>
+		<form method="post" action="delete_ok.do">
 			<table>
 				<tbody>
 					<tr><th class="bg">비밀번호</th> <td><input type="password" name="pwd" ></td></tr>
@@ -48,7 +48,7 @@
 					<tr>
 						<td colspan="2">
 							<input type="button" value="삭제" onclick="del_ok(this.form)">
-							<input type="hidden" name="idx" value="${param.idx}">
+							<input type="hidden" name="idx" value="${vo.idx}">
 						</td>
 					</tr>
 				</tfoot>
